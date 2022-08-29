@@ -1,34 +1,35 @@
+pontos = 0
 perguntas = [
     [
-        'pergunta 1',
+        'Pergunta 1:\nSelecione a alternativa correta que corresponde a uma função de entrada de dados no python:',
         [
-            'alterantiva A',
-            'alterantiva B',
-            'alterantiva C',
-            'alternativa D',
-            'alternativa E'
+            'alterantiva A - While()',
+            'alterantiva B - Input()',
+            'alterantiva C - Print()',
+            'alternativa D - If()',
+            'alternativa E - Case()'
         ],
         'B'
     ],
     [
-        'pergunta 2',
+        'Pergunta 2:\nSelecione a alternativa incorreta:',
         [
-            'alterantiva A',
-            'alterantiva B',
-            'alterantiva C',
-            'alternativa D',
-            'alternativa E'
+            'alterantiva A - "For()" é uma estrutura de repetição',
+            'alterantiva B - "Input()" é uma função de entrada de dados',
+            'alterantiva C - "If/Else" é uma estrutura de repetição',
+            'alternativa D - "x += 5" é igual a: x = x + 5',
+            'alternativa E - "Case()" é uma estrutura condicional'
         ],
         'C'
     ],
     [
-        'pergunta 3',
+        'Pergunta 3:\nUma lista, por padrão, começa pelo Array de numero:',
         [
-            'alterantiva A',
-            'alterantiva B',
-            'alterantiva C',
-            'alternativa D',
-            'alternativa E'
+            'alterantiva A - Todas alternativas estão incorretas!',
+            'alterantiva B - "-1"',
+            'alterantiva C - "10"',
+            'alternativa D - "5"',
+            'alternativa E - "0"'
         ],
         'E'
     ],
@@ -36,7 +37,7 @@ perguntas = [
 
 i = 0
 while i < len(perguntas):
-    print(f'Pergunta: {perguntas[i][0]}')
+    print(f'{perguntas[i][0]}')
     print()
     print("Alternativas: ")
 
@@ -49,8 +50,15 @@ while i < len(perguntas):
     respostaCerta = perguntas[i][2]
     resposta = input("Digite a alternativa correta: ")
     if resposta.upper() == respostaCerta:
-        print("Parabéns, aleternativa certa")
+        pontos += 35
+        print(f"Parabéns, alternativa certa! Você está com {pontos} pontos.")
+        
     else:
         print("Alternativa incorreta")
     print("----------------------------------------------")
     i += 1
+
+if pontos > 70:
+    print("Você foi aprovado!")
+else:
+    print("Você foi reprovado.")
